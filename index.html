@@ -3,11 +3,528 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Church2</title>
+    <title>Grace Word Center</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./images/gwc logo.png">
 </head>
 <body>
+    <div id="container">
+
+        <div id="header">
+            <div class="header-left">
+                <img id="church-logo" alt="church logo" src="./images/gwc logo.png"/> 
+            </div>
+            <div class="header-right">
+                <a href="#about-us" class="nav-link">About Us</a>
+                <a href="#new-members" class="nav-link">New Members</a>
+                <a href="#our-founder" class="nav-link">Our Founder</a>
+                <a href="#church-events" class="nav-link">Church Events</a>
+                <a href="#giving" class="nav-link">Giving</a> 
+                <a href="#testimonies" class="nav-link">Testimonies</a> 
+                <a href="#sermons" class="nav-link">Sermons</a> 
+                <a href="#connect-with-us" class="nav-button">Connect With Us</a>
+            </div>
+        </div> 
+
+        <div id="hero-section">
+            <div class="her-container">
+                <img class="hero-image" alt="church-hero-image" src="./images/church2 homepage.PNG"/>
+            </div>
+            <div class="hero-content">
+                <h1>Grace Word Center</h1>
+                <p>Raising effective and efficient leaders.</p> 
+                <button id="vision-btn" class="hero-modal-trigger">Our Vision</button>
+                <button id="ministries-btn" class="hero-modal-trigger">Our Ministries</button>
+            </div>
+        </div>
+
+        <div id="about-us">
+            <h3>About Us</h3>
+            <div class="about-us-info"> 
+                <img alt="about-us-image" src="./images/pastor3.jpg">
+                <p><strong>Grace Word Center</strong> is an amazing spiritual family tasked with the mandate of raising effective and efficient leaders.</p>
+                <p>We are currently based in Port Harcourt, the city where our founder received the vision to raise leaders for God's Kingdom.</p>
+            </div>
+        </div>
+
+        <div id="new-members">
+            <h3>New Members Can Join Our Spiritual Family!</h3>
+            <div class="new-members-info">
+                <p class="intro-message">
+                We are excited to welcome you to <strong>Grace Word Center!</strong> <br>Fill out the form below to connect with <strong>Grace Word Center</strong> and begin your journey to becoming an effective leader today.
+                </p>
+
+                <form action="/submit-new-member" method="POST" id="new-member-form-js" class="new-member-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="fullName" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="emailAddress" required placeholder="Enter a valid email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phoneNumber" placeholder="e.g., +234 800 123 4567">
+                    </div>
+
+                    <button type="button" id="submit-new-member-btn" class="submit-btn">Welcome Me Home!</button>
+                </form>
+
+                <p class="location-note">
+                    We are based in <strong>Port Harcourt</strong>, where the vision to raise leaders began. We look forward to seeing you!
+                </p>
+            </div>
+        </div>
+
+        <div id="confirmation-modal" class="modal" aria-modal="true" role="dialog">
+            <div class="modal-content">
+                <span class="close-btn">×</span>
+                <h3>🎉 Welcome Home!</h3>
+                <p>Thank you for connecting with Grace Word Center! Please confirm your details below:</p>
+
+                <div id="member-details-output" class="member-details-output">
+                </div>
+
+                <button id="final-confirm-btn" class="final-confirm-btn">Confirm & Join</button>
+                <p class="note-edit">If any details are incorrect, please close this box and edit the form.</p>
+            </div>
+        </div>
+
+        <div id="our-founder">
+            <h3>Meet Our Founder: Pastor Ehijie Oriabure</h3>
+            <p>Lead Pastor, GWC.</p>
+            <div class="founder-info-container"> 
+                <div class="founder-image-box">
+                    <img alt="our-founder-image" src="./images/pastor gwc.PNG">
+                </div>
+
+                <div class="founder-details-box">
+                    <p class="founder-quote">
+                        "The mandate is simple: <strong> to transform followers into and efficient leaders</strong> for God's Kingdom."
+                    </p>
+                    <p>
+                        The vision for <strong> Grace Word Center</strong> was received by our founder, <strong> Pastor Ehijie, </strong> in the city of Port Harcourt. His passion is rooted in the divine instruction to raise individuals who are empowered both spiritually and practically.
+                    </p>
+                    <p>
+                        From humble beginnings, <strong> Pastor Ehijie,</strong> has faithfully led this spiritual family, focusing on deep word studies and practical application, ensuring every member is equipped to fulfil their purpose.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="church-events">
+            <h3>Church Events & Programmes</h3>
+            <div class="events-info-container"> 
+                <div class="event-highlight-box">
+                    <img alt="upcoming-event-image" src="./images/church events image.PNG">
+                </div>
+
+                <div class="programme-list-box">
+                    <p class="section-motto">
+                        Join <strong>Grace Word Center</strong> as we grow together through our dedicated weekly and monthly programmes designed to raise effective leaders.
+                    </p>
+                    
+                    <ul class="events-list">
+                        <li>
+                            <h4>Sunday Worship Service</h4>
+                            <p><strong>Superlife.</strong></p>
+                            <p class="details">
+                                <span class="day-time">Every Sunday @ 7:30 AM - 9:30 AM</span> | A powerful session of worship, the Word, and prophetic ministration.
+                            </p>
+                        </li>
+                        <li>
+                            <h4>Mid-Week Service - Bible Study</h4>
+                            <p><strong>School of Life.</strong></p>
+                            <p class="details">
+                                <span class="day-time">Every Wednesday @ 6:00 PM - 7:30 PM</span> | Deep dive into the scriptures to equip and build your faith.
+                            </p>
+                        </li>
+                        <li>
+                            <h4>Weekly Prayer Drill - Prayer Service</h4>
+                            <p><strong>School of the Spirit.</strong></p>
+                            <p class="details">
+                                <span class="day-time">Every Saturday @ 6:00 AM - 7:00 AM</span> | A time of intense prayer and corporate intercession.
+                            </p>
+                        </li>
+                        <li>
+                            <h4>Monthly Anointing Service</h4>
+                            <p><strong>Communion Service</strong></p>
+                            <p class="details">
+                                <span class="day-time">1st of Every Month @ 6:00 AM during weekends and @ 6:00 PM during weekdays</span> | A time of intense worship, prayers, communion, anointing and corporate intercession.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="giving"> 
+            <h3>Give & Partner With Us</h3> 
+            <div class="giving-info-container"> 
+                <div class="giving-message-box">
+                    <h4>Sowing Seeds for the Kingdom</h4>
+                    <p class="giving-scripture">
+                        "Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over..." (Luke 6:38)
+                    </p>
+                    <p>
+                        Your giving helps <strong>Grace Word Center</strong> fulfill the mandate of raising effective and efficient leaders and advancing God's Kingdom. Every seed sown is deeply appreciated and prayerfully received.
+                    </p>
+                </div>
+
+                <div class="giving-details-box">
+                    <h4>Our Giving Channels</h4>
+                    <p><strong>State your specific giving in your transfer narration. Thank you and God bless you mightily beloved.</strong></p>
+                    <div class="account-details">
+                        <p><strong>Bank Name:</strong> Fidelity Bank</p>
+                        <p><strong>Account Name:</strong> Grace Word Center</p>
+                        <p><strong>Account Number:</strong> 2056781234</p>
+                    </div>
+                    
+                    <ul class="giving-types-list">
+                        <li>
+                            <h5>Tithes & Offerings</h5>
+                            <p class="purpose">Your regular giving for the upkeep of the church.</p>
+                        </li>
+                        <li>
+                            <h5>Building Project Fund</h5>
+                            <p class="purpose">Specific donations towards our future expansion.</p>
+                        </li>
+                        <li>
+                            <h5>Pastor's Ministry Seed</h5>
+                            <p class="purpose">To support the work and ministry of the Founder.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="testimonies">
+    <h3>Stories of Transformation & Impact</h3>
+    <div class="testimonies-info-container"> 
+        
+        <p class="testimonies-intro-text">
+            Witness the mighty acts of God! <br>Read 8 inspiring testimonies from members of <strong>Grace Word Center</strong> whose lives have been transformed through the Word and the Spirit.
+        </p>
+
+        <ul class="testimony-list">
+            <li class="testimony-item">
+                <div class="testimony-content">
+                    <h4>Breakthrough in Business</h4>
+                    <p class="testimony-text">
+                        "After diligently applying the principles of leadership and faith taught at GWC, my business, which was struggling for two years, experienced a massive turnaround! I now lead a thriving team. To God be the glory!"
+                    </p>
+                    <span class="member-name">— Brother Chinedu O. (Port Harcourt)</span>
+                </div>
+            </li>
+
+            <li class="testimony-item">
+                <div class="testimony-content">
+                    <h4>Divine Healing and Restoration</h4>
+                    <p class="testimony-text">
+                        "I was diagnosed with a chronic illness, but I held onto the Word preached by Pastor Ehijie. During the Mid-Week Service, I received my healing! Medical tests confirm I am completely free. I praise God for my life!"
+                    </p>
+                    <span class="member-name">— Sister Precious N. (Online Member)</span>
+                </div>
+            </li>
+
+            <li class="testimony-item">
+                <div class="testimony-content">
+                    <h4>Academic Excellence and Promotion</h4>
+                    <p class="testimony-text">
+                        "I used to struggle with focus, but joining the Grace Word Teens ministry and committing to prayer completely changed my academic life. I graduated top of my class, fulfilling the mandate of becoming an effective leader."
+                    </p>
+                    <span class="member-name">— Youth Leader Emmanuel A.</span>
+                </div>
+            </li>
+            
+            <li class="testimony-item">
+                <div class="testimony-content">
+                    <h4>Supernatural Career Advancement</h4>
+                    <p class="testimony-text">
+                        "I had been stuck at the same professional level for five years. After attending the 'School of the Spirit,' I began praying specifically for elevation. Within three months, I received two job offers and accepted a senior managerial role!"
+                    </p>
+                    <span class="member-name">— Deaconess Funke L. (Lagos)</span>
+                </div>
+            </li>
+
+            <li class="testimony-item">
+                <div class="testimony-content">
+                    <h4>Freedom from Addiction</h4>
+                    <p class="testimony-text">
+                        "The deep Bible studies provided the strength and knowledge of Christ I needed. I battled a debilitating addiction for a decade, but through corporate prayer and counseling at GWC, I am completely delivered and walking in freedom."
+                    </p>
+                    <span class="member-name">— Brother David K. (Abuja)</span>
+                </div>
+            </li>
+            
+            <li class="testimony-item">
+                <div class="testimony-content">
+                    <h4>Safe Delivery and Fruitfulness</h4>
+                    <p class="testimony-text">
+                        "After years of waiting, my husband and I joined the Welfare and Outreach ministry, dedicating ourselves to serving. God answered our prayers. I recently delivered healthy twins safely! We are grateful for this spiritual family."
+                    </p>
+                    <span class="member-name">— Sister Ifeoma E. (Port Harcourt)</span>
+                </div>
+            </li>
+            
+            <li class="testimony-item">
+                <div class="testimony-content">
+                    <h4>Provision in Hard Times</h4>
+                    <p class="testimony-text">
+                        "During a season of severe economic challenge, I committed my finances to the Building Project Fund. I didn't know where my next meal would come from, but God provided a major contract unexpectedly. He is truly Jehovah Jireh!"
+                    </p>
+                    <span class="member-name">— Elder Nnamdi C.</span>
+                </div>
+            </li>
+            
+            <li class="testimony-item">
+                <div class="testimony-content">
+                    <h4>Family Reconciliation</h4>
+                    <p class="testimony-text">
+                        "My relationship with my eldest son was completely broken. After attending the Monthly Anointing Service and receiving prophetic words, I prayed and reconciled with him. Our family is now whole, and our home has peace."
+                    </p>
+                    <span class="member-name">— Pastor Mrs. Florence I.</span>
+                </div>
+            </li>
+
+        </ul>
+        
+       <a href="#" id="share-testimony-trigger" class="full-archive-btn">Share Your Testimony →</a>
+
+    </div>
+</div>
+
+        <div id="sermons">
+            <h3>Recent Sermon Downloads</h3>
+            <div class="sermon-info-container"> 
+                
+                <p class="sermon-intro-text">
+                    Catch up on the latest messages from <strong>Grace Word Center</strong>.<br> Our sermons are designed to empower you with the Word of God to live as effective and efficient leaders.
+                </p>
+
+                <ul class="sermon-list">
+                    <li class="sermon-item">
+                        <div class="sermon-title-box">
+                            <h4>The Power of Alignment</h4>
+                            <span class="speaker-date">Pastor Ehijie Oriabure | December 15, 2025</span>
+                        </div>
+                        <div class="sermon-actions">
+                            <a href="/sermon/alignment-audio.mp3" class="action-btn audio-btn">Listen Now</a>
+                            <a href="/sermon/alignment-video.mp4" class="action-btn video-btn">Watch Video</a>
+                        </div>
+                    </li>
+
+                    <li class="sermon-item">
+                        <div class="sermon-title-box">
+                            <h4>School of the Spirit: Prayer Essentials</h4>
+                            <span class="speaker-date">Pastor Ehijie Oriabure | December 13, 2025</span>
+                        </div>
+                        <div class="sermon-actions">
+                            <a href="/sermon/prayer-essentials-audio.mp3" class="action-btn audio-btn">Listen Now</a>
+                            <a href="/sermon/prayer-essentials-video.mp4" class="action-btn video-btn">Watch Video</a>
+                        </div>
+                    </li>
+
+                    <li class="sermon-item">
+                        <div class="sermon-title-box">
+                            <h4>Foundations of Faith (Part 3)</h4>
+                            <span class="speaker-date">Guest Minister | December 8, 2025</span>
+                        </div>
+                        <div class="sermon-actions">
+                            <a href="/sermon/faith3-audio.mp3" class="action-btn audio-btn">Listen Now</a>
+                            <a href="/sermon/faith3-video.mp4" class="action-btn video-btn">Watch Video</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <a href="/sermon-archive" class="full-archive-btn">View Full Sermon Archive →</a>
+            </div>
+        </div>
+
+        <div id="connect-with-us">
+            <h3>Connect With Us</h3>
+            <div class="connect-info-container"> 
+                
+                <div class="connect-details-box">
+                    <h4>Reach Out to Our Team</h4>
+                    <p class="connect-intro">
+                        We are happy to answer any questions you may have about <strong>Grace Word Center,</strong> our programmes, or our location in Port Harcourt.
+                    </p>
+
+                    <ul class="connect-list">
+                        <li>
+                            <h5>Address:</h5>
+                            <p>#5 Akani Orlu Close, Navy Junction, Nkpor, Rumuorlumeni, Port Harcourt, Rivers State, Nigeria.</p>
+                        </li>
+                        <li>
+                            <h5>Phone:</h5>
+                            <p>+234 (0) 800 GWC-LEAD (e.g., 800 492-5323)</p>
+                        </li>
+                        <li>
+                            <h5>Email:</h5>
+                            <p><span id="email-link-js">info@gracewordcenter.org</span></p>
+                        </li>
+                    </ul>
+
+                    <div class="map-placeholder">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15873.743232840003!2d7.025!3d4.928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069c9b5f3a0a653%3A0x629555c26a5756d1!2sNkpor%2C%20Port%20Harcourt%2C%20Rivers%20State%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1702640000000!5m2!1sen!2sus"
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="embedded-map"
+                        ></iframe>
+                        <p>Find us easily on the map!</p>
+                    </div>
+                </div>
+
+                <div class="connect-form-box">
+                    <h4>Send Us a Message</h4>
+                    <form action="/submit-connect" method="POST" class="connect-form" id="connect-form-js"> 
+                        <div class="form-group">
+                            <label for="connect-name">Full Name</label>
+                            <input type="text" id="connect-name" name="fullName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="connect-email">Email Address</label>
+                            <input type="email" id="connect-email" name="emailAddress" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="connect-subject">Subject</label>
+                            <input type="text" id="connect-subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="connect-message">Your Message</label>
+                            <textarea id="connect-message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-connect-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <footer id="main-footer">
+            <div class="footer-container">
+
+                <div class="footer-column footer-brand">
+                    <img alt="church logo" src="./images/gwc logo.png" id="footer-image"/>
+                    <h3 class="footer-logo">Grace Word Center</h3>
+                    <p class="mission-statement">
+                        Raising effective and efficient leaders empowered by the Word and the Spirit.
+                    </p>
+                </div>
+
+                <div class="footer-column footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about-us">About Us</a></li>
+                        <li><a href="#church-events">Events Calendar</a></li>
+                        <li><a href="#sermons">Sermons & Archive</a></li>
+                        <li><a href="#giving">Online Giving</a></li>
+                        <li><a href="#new-members">New Members</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-contact">
+                    <h4>Connect with Us</h4>
+                    <p><strong>Location:</strong> Port Harcourt, Nigeria</p>
+                    <p><strong>Email:</strong> <a href="mailto:info@gracewordcenter.org" class="footer-email">info@gracewordcenter.org</a></p>
+                    
+                    <div class="social-handles">
+                        <a href="https://web.facebook.com/Fountainoflifechristianworshipcentre/posts/get-ready-for-a-life-changing-experienceon-october-18th-2025-grace-word-centre-n/1274140831394780/?_rdc=1&_rdr#" target="_blank" aria-label="Facebook">
+                            <img class="sm-icon" alt="Facebook" src="./images/facebook logo.PNG"/>
+                        </a>
+                        <a href="#" target="_blank" aria-label="Instagram">
+                            <img class="sm-icon" alt="Instagram" src="./images/instagram logo2.PNG" />
+                        </a>
+                        <a href="#" target="_blank" aria-label="Youtube">
+                            <img class="sm-icon" alt="Youtube" src="./images/youtube logo2.PNG" />
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <p class="copyright">© 2025 Grace Word Center. All Rights Reserved.</p>
+        </footer>
+
+    </div>
     
-    
+    <div id="vision-modal" class="modal" aria-modal="true" role="dialog">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h3>Our Vision</h3>
+            <p>
+                The vision of <strong>Grace Word Center</strong> is to raise a global network of believers who are empowered by the Word and the Spirit to function as effective and efficient leaders in all spheres of life, thereby advancing the Kingdom of God.
+            </p>
+            <p>
+                We are dedicated to building faith, fostering spiritual growth, and impacting our community and beyond with the transforming power of the Gospel.
+            </p>
+        </div>
+    </div>
+
+    <div id="ministries-modal" class="modal" aria-modal="true" role="dialog">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h3>Our Ministries</h3>
+            <ul class="ministries-list">
+                <li><strong>Grace Word Worship:</strong> Leading congregants into deeper communion with God through music.</li>
+                <li><strong>Grace Word Teens:</strong> Building faith foundations for the next generation of leaders.</li>
+                <li><strong>The Watch Intercessory Team:</strong> Dedicated prayer and spiritual warfare unit.</li>
+                <li><strong>Welfare and Outreach:</strong> Serving the local community and providing support to those in need.</li>
+            </ul>
+            <p>We believe every member has a place to serve and grow.</p>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal" aria-modal="true" role="dialog">
+        <div class="modal-content success-content">
+            <h3>Congratulations!!!</h3>
+            <p>You are now a part of this spiritual family. <br> Welcome to Grace Word Center Beloved.</p>
+        </div>
+    </div>
+ 
+    <div id="testimony-modal" class="modal" aria-modal="true" role="dialog">
+    <div class="modal-content">
+        <span class="close-btn testimony-close-btn">×</span>
+        <h3>Share Your Testimony, Healing and Breakthrough with Us.</h3>
+        <p>Tell us how God has worked in your life through <strong>Grace Word Center.</strong></p>
+
+        <form action="#" method="POST" class="testimony-form" id="testimony-form-js">
+            <div class="form-group">
+                <label for="testimony-name">Full Name (Optional)</label>
+                <input type="text" id="testimony-name" name="fullName" placeholder="Anonymous or your name">
+            </div>
+
+            <div class="form-group">
+                <label for="testimony-email">Email Address</label>
+                <input type="email" id="testimony-email" name="emailAddress" required placeholder="For verification (will not be published)">
+            </div>
+
+            <div class="form-group">
+                <label for="testimony-title">Testimony Headline</label>
+                <input type="text" id="testimony-title" name="headline" required placeholder="E.g., Divine Healing, Career Lift">
+            </div>
+
+            <div class="form-group">
+                <label for="testimony-message">Your Testimony</label>
+                <textarea id="testimony-message" name="message" rows="6" required placeholder="Write your full story here..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-testimony-btn">Send Testimony</button>
+        </form>
+    </div>
+</div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
