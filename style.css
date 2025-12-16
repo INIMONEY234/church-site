@@ -1423,37 +1423,58 @@ body {
     border: 2px solid var(--brand-color-primary, #004d99);
 }
 
+
 @media (max-width: 768px) {
     /* --- Global & Header Reset --- */
     #header {
         flex-direction: column;
+        margin: auto;
         height: auto;
         padding: 15px 10px;
         text-align: center;
         gap: 15px;
+        display: flex;
     }
 
     .header-left {
         width: 100%;
+        display: inline-block;
         justify-content: center;
+        flex-direction: row;
     }
 
     .header-right {
-        flex-direction: column;
+        display: block;
+        flex-direction: row;
         width: 100%;
-        gap: 10px;
+        padding: 15px 15px;
+        line-height: 1.8;
     }
 
     .nav-link, .nav-button {
-        padding: 8px 0;
-        width: 100%;
+        padding: 6px 1.6px;
+        width: 150px;
         text-align: center;
+        margin: 10px auto;
+        text-decoration: none;
+        transition: background-color 0.1s; 
     }
     
     .nav-button {
-        padding: 10px 15px;
         font-size: 0.8em;
+        cursor: pointer;
     }
+
+.nav-link:active, .nav-button:active {
+        color: #00aaff;
+        background-color: #406fb5;
+        border-color: #406fb5; /* Optional: change border color */
+    }
+
+    .nav-link:hover, .nav-button:hover {
+            background-color: #e0e0e0;
+            text-decoration: underline;
+        }
 
     /* --- Hero Section Adjustment --- */
     .hero-container {
@@ -1461,15 +1482,15 @@ body {
     }
     
     .hero-content {
-        top: 50%; 
+        top: 98%; 
         transform: translate(-50%, -50%); 
         padding: 0 20px;
     }
     
     /* --- Main Sections (About, Founder, Events, Giving, Connect) --- */
     #about-us, #our-founder, #church-events, #giving, #sermons, #connect-with-us {
-        margin: 40px auto;
-        padding: 20px 10px;
+        margin: 20px auto;
+        padding: 10px 10px;
     }
 
     /* Stack Flex containers for mobile */
@@ -1480,8 +1501,8 @@ body {
     .connect-info-container {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
-        padding: 20px;
+        gap: 20px;
+        padding: 10px;
     }
 
     /* Force full width and center content within columns */
@@ -1494,17 +1515,18 @@ body {
     .giving-details-box,
     .connect-details-box,
     .contact-form-box {
-        flex: 0 0 100% !important;
-        min-width: 100% !important;
-        max-width: 100% !important;
+        flex: 0 0 90% !important;
+        min-width: 90% !important;
+        max-width: 90% !important;
         text-align: center;
+        margin: 10px auto;
     }
     
     .about-us-info img,
     .founder-image-box,
     .event-highlight-box {
         max-width: 80%;
-        margin: 0 auto 15px auto;
+        margin: 0 auto 10px auto;
     }
     
     /* Reset specific text alignment for blocks that should remain left-aligned for readability */
@@ -1519,15 +1541,21 @@ body {
     .contact-form-box,
     .sermon-title-box {
         text-align: left;
+        margin: 10px auto;
     }
     
     /* Center the New Members form box */
     #new-members {
-        padding: 20px 10px;
-        margin-left: auto;
-        margin-right: auto;
+        padding: 10px 10px;
+        margin-left: 1px;
+        margin-right: 1px;
+        width: 98%;
     }
     
+    #new-members form{
+        width: 85%;
+    }
+
     /* Remove vertical separator line in Connect section */
     .connect-details-box {
         border-right: none;
@@ -1539,7 +1567,7 @@ body {
     .sermon-item {
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px;
+        padding: 10px;
     }
     
     .sermon-title-box {
@@ -1555,24 +1583,24 @@ body {
     /* Testimonies Grid to single column */
     .testimony-list {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 10px;
     }
 
     /* --- Footer Adjustment --- */
     #main-footer {
-        padding: 40px 10px 20px 10px;
+        padding: 20px 5px 10px 5px;
     }
     
     .footer-container {
         flex-direction: column; 
         align-items: center; 
-        gap: 30px;
+        gap: 20px;
     }
 
     .footer-column {
         flex-basis: 100%;
         text-align: center;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         padding: 0;
     }
     
@@ -1609,8 +1637,8 @@ body {
     }
     
     #testimony-modal .modal-content {
-        width: 90%;
-        max-width: 90%;
-        margin: 10% auto;
+        width: 80%;
+        max-width: 80%;
+        margin: 8% auto;
     }
 }
