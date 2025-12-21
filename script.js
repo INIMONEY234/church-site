@@ -227,3 +227,31 @@ if (testimonyForm) {
         // Note: For better UX, you could replace the browser alert() with a custom success modal.
     });
 }
+
+
+
+
+//Church to top logic 
+
+const backToTopBtn = document.getElementById("backToTop");
+
+// When the user scrolls down 100px from the top, show the button
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
