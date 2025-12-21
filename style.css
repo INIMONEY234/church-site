@@ -65,63 +65,112 @@ body {
     box-shadow: 0 6px 12px rgba(0, 119, 182, 0.4);
 }
 
+#hero-section {
+    position: relative;
+    height: 100vh; /* Adjust height as needed */
+    overflow: hidden;
+}
+
 .hero-container {
-    position: relative; 
-    width: 100%; 
-    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Background layer */
 } 
+
+.hero-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1.9); /* Darkens images by 40% */
+    z-index: 1;
+}
 
 .hero-image {
     width: 100%; 
-    height: 550px; 
+    height: 75%; 
     display: block; 
+    margin: auto; 
+    position: absolute;
+    top: 0;
+    left: 0;
     object-fit: cover;
-    margin: auto;
+    opacity: 0;
+    animation: fadeCarousel 50s infinite; /* 30 seconds total for 10 images */
 } 
 
+/* Distribute the start time for each of the 10 images */
+.hero-image:nth-child(1)  { animation-delay: 0s; }
+.hero-image:nth-child(2)  { animation-delay: 5s; }
+.hero-image:nth-child(3)  { animation-delay: 10s; }
+.hero-image:nth-child(4)  { animation-delay: 15s; }
+.hero-image:nth-child(5)  { animation-delay: 20s; }
+.hero-image:nth-child(6)  { animation-delay: 25s; }
+.hero-image:nth-child(7)  { animation-delay: 30s; }
+.hero-image:nth-child(8)  { animation-delay: 35s; }
+.hero-image:nth-child(9)  { animation-delay: 40s; }
+.hero-image:nth-child(10) { animation-delay: 45s; }
+
+@keyframes fadeCarousel {
+    0%   { opacity: 0; }
+    5%   { opacity: 1; } /* Fade in */
+    10%  { opacity: 1; } /* Stay visible */
+    15%  { opacity: 0; } /* Fade out */
+    100% { opacity: 0; }
+}
+
 .hero-content {
-    position: absolute;
-    top: 55%; 
+    position: relative;
+    z-index: 2; /* Ensures text stays above the images */
+    text-align: center;
+    top: 42%; 
     left: 50%; 
     transform: translate(-50%, -30%); 
-    color: #ffffff;
-    text-align: center; 
     width: 100%; 
     margin: auto;
 } 
 
 .hero-content h1 {
-    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.9); 
-    font-size: 2.8em;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 1.9); 
+    font-size: 3.6rem;
     font-weight: 700; 
+    color: #ffffff;
 }
 
 .hero-content p {
     text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.9); 
     font-weight: 500;
+    color: #ffffff;
 }
 
 .hero-content button {
-    gap: 12px;
+    gap: 10px;
     display: inline-block;
     justify-content: space-between;
-    margin: 15px; 
+    margin: 10px 30px 0 30px; 
     border-radius: 20px;
     padding: 10px;
-    font-weight: bold;
-    background-color: transparent;
-    border: 2px solid #ffffff; 
+    font-weight: 700;
+    background-color: #ffffff;
+    border: 3px solid #000000;
     cursor: pointer;
-    color: #ffffff;
+    color: #000000;
     text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.9);
 }
 
 .hero-content button:hover {
     color: #ffffff;
-    font-weight: bold;
+    font-weight: bold; 
+    border: 3px solid #ffffff;
     background-color: #0077b6;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 119, 182, 0.4);
+    box-shadow: 2px 6px 12px rgba(0, 119, 182, 0.4);
+    transition: all 1.2s;
 } 
 
 #about-us {
@@ -1519,43 +1568,64 @@ body {
     }
 
     /* --- Hero Section Verticality --- */
-    .hero-container {
+    @media screen and (max-width: 768px) {
+    #hero-section {
+        height: 80vh; 
+        position: relative; 
         display: flex;
-        flex-direction: column;
+        align-items: center;    /* Centers content vertically */
+        justify-content: center; /* Centers content horizontally */
+        text-align: center;
+        overflow: hidden; /* Prevents unwanted scrolling */
+    }
+
+    /* 1. Fix the Container (The Background) */
+    .hero-container {
+        position: absolute; /* Sits behind the content */
+        top: 0;
+        left: 0;
         width: 100%;
-        min-height: 400px; /* Ensures the hero has presence */
+        height: 100%;
+        margin: 0; /* Removed the negative margins causing offset */
+        z-index: 1; /* Lowest layer */
     }
 
     .hero-image {
-        order: 1; /* Image stays at top */ 
-        display: block;
         width: 100%;
-        height: 500px;
-        max-width: none;    /* Overrides any desktop max-width constraints */
-        object-fit: cover;  
+        height: 100%;
+        object-fit: cover;
     }
 
+    /* 2. Fix the Content (The Text & Buttons) */
     .hero-content {
-        text-align: center; 
-        top: 750px;
-        left: 0;
-        transform: none;
+        position: relative; 
+        z-index: 10;  /* Higher than hero-container */
+        top: 35%;       /* REMOVED 750px - this was pushing it off screen */
+        width: 90%;   /* Gives some breathing room on sides */
+        margin: 0 auto;
+        pointer-events: none; /* Allows clicks to pass to buttons below */
     }
 
-    .hero-container {
-        width: 100vw;       /* Sets width to 100% of the Viewport Width */
-        margin-left: 0;
-        margin-right: 0;
-        padding: 0;
-        position: relative;
-        top: 20%;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
+    .hero-content h1 {
+        font-size: 2.2rem;
+        color: #ffffff; 
+        margin: 10px 5px 0 5px; 
+        pointer-events: auto; /* Makes text selectable/clickable */
+        text-shadow: 2px 4px 4px rgba  (0, 0, 0, 0.9); 
     }
 
+    .hero-content p {
+        font-size: 0.9rem;
+        color: #ffffff; /* Or white depending on your background */
+        pointer-events: auto;
+    }
 
+    .hero-modal-trigger {
+        display: block;
+        width: 50%;
+        margin: 2px auto 4px auto;
+        pointer-events: auto; /* IMPORTANT: Buttons must be clickable */
+    }
 
     #about-us {
         display: flex;
